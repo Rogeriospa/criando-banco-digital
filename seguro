@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+import javax.management.loading.PrivateClassLoader;
+
+public class Seguro {
+	
+	private String segurado;
+	private int registro;
+	private double apolice;
+	private String tipo;
+	private double pagamento;
+	
+	Scanner ent = new Scanner(System.in);
+	
+	public Seguro(Cliente cliente) {
+		
+	}
+	
+	public Seguro (String segurado, int registro, double apolice, String tipo, double pagamento) {
+		segurado = segurado;
+		registro = registro;
+		pagamento = pagamento;
+		apolice = apolice;
+		tipo = tipo;
+		
+	}
+
+	public Seguro() {
+		
+	}
+
+	public String getSegurado() {
+		return segurado;
+	}
+
+	public void setSegurado(String segurado) {
+		this.segurado = segurado;
+	}
+
+	public int getRegistro() {
+		return registro;
+	}
+
+	public void setRegistro(int regitro) {
+		this.registro = regitro;
+	}
+
+	public double getApolice() {
+		return apolice;
+	}
+	
+	public void setPagamento(double pagamento) {
+		this.pagamento = pagamento;
+	}
+	
+	public double getPagamento() {
+		return pagamento;
+	}
+
+	public void setApolice(double apolice) {
+		this.apolice = apolice;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	@Override
+	public String toString() {
+		return "Seguro [segurado=" + segurado + ", registro=" + registro + ", apolice=" + apolice + ", tipo=" + tipo
+				+ ", pagamento=" + pagamento + "]";
+	}
+	 
+	public void pagamento(double valor) {
+		valor += valor;
+	}
+
+	public void apolice() {
+		System.out.println("");
+		System.out.println("=== Apólice de Seguro ===");
+		System.out.println("");
+		System.out.println(". Apólice_________" + getApolice());
+	}
+	
+	
+	public void entrada() {
+		 System.out.println("");
+		 System.out.println("=== Contrato de Segurado ===");
+		 System.out.println("");
+		 System.out.println("Segurado: ");
+		 setSegurado(ent.nextLine());
+		 System.out.println("Registro: ");
+		 setRegistro(Integer.parseInt(ent.nextLine()));
+		 System.out.println("Pagamento: ");
+		 setPagamento(Double.parseDouble(ent.nextLine()));
+		 System.out.println("Apólice: ");
+		 setApolice(Double.parseDouble(ent.nextLine()));
+		 System.out.println("Tipo de Seguro: ");
+		 setTipo(ent.nextLine());
+		 System.out.println("");
+	}
+	
+	public void imprimirContrato() {
+		 System.out.println("");
+		 System.out.println("=== Contrato de Segurado ===");
+		 System.out.println("");
+		 System.out.println(". Segurado-------- " + getSegurado());
+		 System.out.println(". Registro--------" + getRegistro());
+		 System.out.println(". Pagamento--------" + getPagamento());
+		 System.out.println(". Apólice--------" + getApolice());
+		 System.out.println(". Tipo de Seguro--------" + getTipo());
+	}
+}
